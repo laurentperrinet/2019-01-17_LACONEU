@@ -80,8 +80,20 @@ if not os.path.isfile(figname):
     code.png(figname, scale=5)
 
 print(meta['sections'])
-s = Slides(meta)
 
+s = Slides(meta)
+figpath_people = os.path.join(home, 'Desktop/2017-01_LACONEU/people')
+Karl = s.content_imagelet(os.path.join(figpath_people, 'karl.jpg'), height_px)
+Mina = s.content_imagelet(os.path.join(figpath_people, 'mina.jpg'), height_px)
+Anna = s.content_imagelet(os.path.join(figpath_people, 'anna.jpg'), height_px)
+Python = s.content_imagelet('https://docs.python.org/3/_static/py.png', height_px)
+s.meta['Acknowledgements'] =f"""<h3>Acknowledgements:</h3>
+   <ul>
+    <li>Rick Adams and Karl Friston @ UCL - Wellcome Trust Centre for Neuroimaging</li>
+    <li>Mina Aliakbari Khoei and Anna Montagnini - FACETS-ITN Marie Curie Training</li>
+   </ul>
+   {Karl}{Mina}{Anna}<a href="https://github.com/laurentperrinet/slides.py">{Python}</a>
+"""
 ###############################################################################
 # 🏄🏄🏄🏄🏄🏄🏄🏄 intro  🏄🏄🏄🏄🏄🏄🏄🏄
 ###############################################################################
@@ -114,6 +126,7 @@ intro = """
 """.format(**meta)
 intro += s.content_imagelet(os.path.join(figpath_slides, "troislogos.png"), s.meta['height']*.2) #bgcolor="black",
 intro += """
+{Acknowledgements}
 <h4><a href="{conference_url}">{conference}</a>, {DD}/{MM}/{YYYY} </h4>
 """.format(**meta)
 
