@@ -558,14 +558,14 @@ if slides_filename is None:
  Qui:: {author}
  Quand:: {DD}/{MM}/{YYYY}
  Où:: {location}
- Support visuel:: http://blog.invibe.net/files/{tag}.html
+ Support visuel:: https://laurentperrinet.github.io/{tag}
 
 
  What:: talk @ the [[{conference_url}|{conference}]]
  Who:: {author}
  When:: {DD}/{MM}/{YYYY}
  Where:: {location}
- Slides:: http://blog.invibe.net/files/{tag}.html
+ Slides:: https://laurentperrinet.github.io/{tag}
  Code:: https://github.com/laurentperrinet/{tag}/
 == reference ==
 {{{{{{
