@@ -433,7 +433,7 @@ let's move to the second part : at the cortical leval
 
 """)
 
-fle_bib = s.content_bib("Khoei, Masson and LP", "2017", 'In press, PLoS CB <a href="http://invibe.net/LaurentPerrinet/Publications/KhoeiMassonPerrinet17">http://invibe.net/LaurentPerrinet/Publications/KhoeiMassonPerrinet17</a>')
+fle_bib = s.content_bib("Khoei, Masson and LP", "2017", 'PLoS CB', url="http://invibe.net/LaurentPerrinet/Publications/KhoeiMassonPerrinet17")
 
 s.add_slide(content="""
     <video controls autoplay loop width=99%/>
