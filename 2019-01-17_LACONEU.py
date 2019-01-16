@@ -88,15 +88,15 @@ Mina = s.content_imagelet(os.path.join(figpath_people, 'mina.jpg'), height_px)
 Anna = s.content_imagelet(os.path.join(figpath_people, 'anna.jpg'), height_px)
 Python = s.content_imagelet('https://www.python.org/static/community_logos/python-powered-h-140x182.png', height_px)
 s.meta['Acknowledgements'] =f"""<h3>Acknowledgements:</h3>
-   <ul>
+<ul>
     <li>Rick Adams and Karl Friston @ UCL - Wellcome Trust Centre for Neuroimaging</li>
     <li>Mina Aliakbari Khoei and Anna Montagnini - FACETS-ITN Marie Curie Training</li>
-   </ul>
-
-   {Karl}{Mina}{Anna}<a href="https://github.com/laurentperrinet/slides.py">{Python}</a>
+</ul>
+<BR>
+{Karl}{Mina}{Anna}<a href="https://github.com/laurentperrinet/slides.py">{Python}</a>
 """
 ###############################################################################
-# 🏄🏄🏄🏄🏄🏄🏄🏄 intro  🏄🏄🏄🏄🏄🏄🏄🏄
+# 🏄🏄🏄🏄🏄🏄🏄🏄         intro  - motivation - teaser        🏄🏄🏄🏄🏄🏄🏄🏄
 ###############################################################################
 i_section = 0
 s.open_section()
@@ -182,176 +182,354 @@ s.add_slide(content="""
     <video controls loop width=60%/>
       <source type="video/mp4" src="{}">
     </video>
-    """.format('https://raw.githubusercontent.com/laurentperrinet/2019-01-16_LACONEU/master/figures/ssc.mp4'))
+    """.format('https://raw.githubusercontent.com/laurentperrinet/2019-01-16_LACONEU/master/figures/ssc.mp4')+review_bib)
 
-s.close_section()
-
-i_section += 1
-###############################################################################
-# 🏄🏄🏄🏄🏄🏄🏄🏄 Sparse coding  🏄🏄🏄🏄🏄🏄🏄🏄
-###############################################################################
-###############################################################################
-s.open_section()
-title = meta['sections'][i_section]
-s.add_slide_outline(i_section,
-notes="""
-one can go one step before the cortex and ask the same question in the retina
-are the same process present ?
-""")
-
-ravelllo_bib = s.content_bib('Ravello, LP, Escobar, Palacios', '2018', 'Scientific Reports', url='https://dx.doi.org/10.1101/350330')
-for si in ['2', '1', '5ac', '5dh']:
-    s.add_slide(content=s.content_figures(
-            [os.path.join(figpath_talk, 'Ravello2018_'+ si + '.png')], title=None, embed=False, height=s.meta['height']*.7)+ravelllo_bib,
-            notes="""
-figure 3 of MS1
-
-""")
-
-# figpath = os.path.join(home, 'Desktop/2017-01_LACONEU/figures/')
-s.add_slide(content="""
-    <video controls loop width=85%/>
-      <source type="video/mp4" src="{}">
-    </video>
-    """.format('figures/v1_tiger.mp4'), #s.embed_video(os.path.join(figpath,     """.format(s.embed_video(os.path.join(figpath_talk, 'v1_tiger.mp4'))),
-notes="""
-same procedure with retinal filters (scale, no orientation) = sparseness
-""")
-
-
-droplets_bib = s.content_bib('Ravello, Escobar, Palacios, LP', '2019', 'in prep', url=None)
-s.add_slide(content=s.content_figures(
-                    ['figures/Droplets_1.png'], fragment=True, transpose=True,
-                    title=None, embed=False, height=s.meta['height']*.8)+droplets_bib,
-            notes="""
-figure 1 of droplets
-
-""")
-
-
-ols_bib = s.content_bib("Olshausen and Field", "1997", 'Sparse coding with an overcomplete basis set: A strategy employed by V1?')
-for i in [2]:
-    s.add_slide(content=s.content_figures(
-        [os.path.join(figpath_talk, 'Olshausen_'+ str(i) + '.png')], bgcolor="white",
-        title=None, embed=False, height=s.meta['height']*.85) + ols_bib,
-           notes="""
-since we assume the retina would invert this model, let's use the forward model
-to generate stimuli = droplets
-
-""")
-
-figpath = os.path.join(home,  'pool/science/RetinaCloudsSparse/2015-11-13_droplets/2015-11-13_1310_full_files/droplets_full')
-for fname in ['00012_droplets_i_sparse_3_n_sf_8.mp4', '00006_droplets_i_sparse_5_n_sf_1.mp4', ]:
-    s.add_slide(content="""
-        <video controls loop width=60%/>
-          <source type="video/mp4" src="{}">
-        </video>
-        """.format(s.embed_video(os.path.join(figpath, fname))),
-                notes="""
-very sparse to very dense
-
-    """)
-
-
-droplets_bib = s.content_bib('Ravello, Escobar, Palacios, LP', '2019', 'in prep', url=None)
-for suffix in ['a', 'b']:
-    s.add_slide(content=s.content_figures(
-                    [#os.path.join(figpath, 'retina_sparseness_droplets.png'),
-                     os.path.join(figpath_talk, 'Droplets_3_' + suffix + '.png')], fragment=False, transpose=True,
-                    title=None, embed=False, height=s.meta['height']*.75)+droplets_bib,
-            notes="""
-figure 3 of droplets
-
-""")
-
-s.add_slide(content=s.content_figures(
-                    ['figures/Droplets_5.png'],
-                    title=None, embed=False, height=s.meta['height']*.75)+droplets_bib,
-            notes="""
-figure 5 of droplets
-
-""")
-
-s.close_section()
-
-i_section += 1
-###############################################################################
-# 🏄🏄🏄🏄🏄🏄🏄🏄         Sparse Hebbian Learning - 15''              🏄🏄🏄🏄🏄🏄🏄🏄
-###############################################################################
-###############################################################################
-
-s.open_section()
-title = meta['sections'][i_section]
-s.add_slide_outline(i_section,
-notes="""
-let's move to the second part : learning
-
-the main goal of Olshasuen was not only sparse coding but
-the fact that using the sparse code, a simple linear hebbian learning allows
-to separate independent sources
-
-""")
-
-figpath = os.path.join(home, 'Desktop/2017-01_LACONEU/figures/')
-s.add_slide(content="""
-    <video controls loop width=60%/>
-      <source type="video/mp4" src="{}">
-    </video>
-    """.format('figures/ssc.mp4')) #s.embed_video(os.path.join(figpath,         s.embed_video(os.path.join('figures', 'ssc.mp4'))))
 #
-
-figpath = os.path.join(home, 'science/ABC/HULK/')
-
-for suffix in ['map', 'HAP']:
-    s.add_slide(content=s.content_figures(
-        [os.path.join(figpath, 'figure_' + suffix + '.png')], bgcolor="black",
-    title=None, height=s.meta['height']*.75),
-           notes="""
-a contribution we made to this algorithm is homeostasis
-
-
-
-""")
-CNN_ref = '(from <a href="http://cs231n.github.io/convolutional-networks/">http://cs231n.github.io/convolutional-networks/</a>)'
 s.add_slide(content=s.content_figures(
-    ['http://cs231n.github.io/assets/cnn/depthcol.jpeg'], bgcolor="black",
-title=None,  embed=False, height=s.meta['height']*.85) + CNN_ref,
-       notes="""
+   [os.path.join(home, 'pool/science/PerrinetBednar15/talk/scheme_thorpe.jpg')], bgcolor="black",
+   height=s.meta['height']*.90),
+notes="""
 
-this can be extended to a convolutional neural networks
+ * today, I would like  to focus on a particular problem which will help us unravel the dynamics of decision making: oculomotor delays. Indeed, one challenge for modelling is to understand EMs using AI as a problem of optimal motor control under axonal delays. The central nervous system has to contend with axonal delays, both at the sensory and the motor levels. For instance, in the human visuo-oculomotor system, it takes approximately $ \tau_s=50~ms$ for the retinal image to reach the visual areas implicated in motion detection, and a further $ \tau_m=40~ms $ to reach the oculomotor muscles.
 
-""")
+ * challenging - see Thorpe's monkey
 
-for suffix in ['CNN']:
-    s.add_slide(content=s.content_figures(
-        [os.path.join(figpath, 'figure_' + suffix + '.png')], bgcolor="black",
-    title=None, height=s.meta['height']*.85),
-           notes="""
+ * how does this impact behaviour?
+ """)
 
-discussion...
-
-""")
-
-for suffix in ['1', '2a', '2b']:
-    s.add_slide(content=s.content_figures(
-        [os.path.join(figpath_talk, 'SDPC_' + suffix + '.png')], bgcolor="black",
-    title=None, embed=False, height=s.meta['height']*.85),
-           notes="""
-
-Multi-layered unsupervised Learning
-
-
-""")
-
+figpath_2017 = os.path.join(home, 'Desktop/2017-01_LACONEU/figures/')
 
 s.add_slide(content=s.content_figures(
-    [os.path.join(figpath_talk, 'SDPC_' + suffix + '.png') for suffix in ['3', '4']],
-    bgcolor="black", fragment=True,
-    title=None, embed=False, height=s.meta['height']*.75),
+   [os.path.join(figpath_2017, 'tsonga.png')], bgcolor="black",
+   height=s.meta['height']*.90),
+   notes="""
+
+
+* ... As a consequence, for a tennis player ---here (highly trained) Jo-Wilfried Tsonga at Wimbledon--- trying to intercept a passing-shot ball at a (conservative) speed of $20~m.s^{-1}$, the position sensed on the retinal space corresponds to the instant when its image formed on the photoreceptors of the retina and reaches our hypothetical motion perception area behind:
+
+ """)
+s.add_slide(content=s.content_figures(
+   [os.path.join(figpath_2017, 'figure-tsonga.png')], bgcolor="black",
+   height=s.meta['height']*.90),
+   #image_fname=os.path.join(figpath, 'figure-tsonga.png'), embed=False,
        notes="""
 
-allows for a better classification as here for MNIST digits
+* and at this instant, the sensed physical position is lagging behind (as represented here by $\tau_s \cdot v 1~m$ ), that is, approximately at $45$ degrees of eccentricity (red dotted line),
+
+* while the  position at the moment of emitting the motor command will be $.8~m$ ahead of its present physical position ($\tau_m \cdot v$).
+
+* As a consequence, note that the player's gaze is directed to the ball at its **present** position (red  line), in anticipatory fashion. Optimal control directs action (future motion  of the eye) to the expected position (red dashed line) of the ball in the  future --- and the racket (black dashed line) to the expected position of the  ball when motor commands reach the periphery (muscles). This is obviously an interesting challenge for modelling an optimal control theory.
+
 """)
+
+s.add_slide(content=s.content_figures(
+   [os.path.join(figpath_2017, 'back-to-the-future-quotes-dr-emmett-brown.jpg')], bgcolor="black",
+   height=s.meta['height']*.90),#)
+
+# s.add_slide(content=s.content_figures(
+#    [os.path.join(figpath, 'figure-tsonga-AB.png')], bgcolor="black",
+#    height=s.meta['height']*.90),
+   #image_fname=os.path.join(figpath, 'figure-tsonga-AB.png'),  embed=False,
+#s.add_slide_outline(
+notes="""
+WOW! THIS LOOKS COMPLICATED!
+
+Luckily, we can integrat'e that in the free-energy formalism
+ """)
+
+
+s.close_section()
+
+i_section += 1
+###############################################################################
+# 🏄🏄🏄🏄🏄🏄🏄🏄              Active inference               🏄🏄🏄🏄🏄🏄🏄🏄
+###############################################################################
+###############################################################################
+s.open_section()
+title = meta['sections'][i_section]
+s.add_slide_outline(i_section,
+notes="""
+Let's set up the problem
+""")
+
+#     figpath = 'figures/'
+#     # karl_bib = s.content_bib("Friston", "2010", "Nat Neuro Reviews")
+#
+#     s.add_slide(content=s.content_figures(
+#       [os.path.join(figpath, 'figure-tsonga-B.png')], bgcolor="black",
+#       height=s.meta['height']*.90),
+#       #image_fname=os.path.join(figpath, 'figure-tsonga-AB.png'),
+#        notes="""
+#
+# In that order, we will now show how to include oculomotor delays
+#
+# and include constraints from EMs as a model for a generic model of decision making
+#
+# thanks to a one year sabbatical visit at Karl Friston's lab in London at the WTCI UCL and in collaboration with Rick Adams, I have had the chance to collaborate in the ellaboration of a series of studies on Active inference and EMs:
+#
+# """)
+
+# s.add_slide(content=s.content_figures(
+# [os.path.join(figpath, 'friston10c_fig4.png')], bgcolor="black",
+# title=title, height=s.meta['height']*.6) + karl_bib,
+#    notes="""
+#
+# As we now all know, the ...
+#
+# Unification des theories computationnelles par la minimisation de l'energie libre (MEL).
+# Cette figure extraite de {Friston10c} represente la place central du principe de MEL dans l'ensemble des theories computationnelles. En particulier, on peut noter que les principes que nous avons detailles plus haut dans les chapitres precedents (reseaux de neurones heuristiques, principes d'optimisation, codage predictif, ...) peuvent se rapporter a ce langage commun. %
+#
+# ... when including action in such models, it becomes ...
+#
+# """)
+
+s.add_slide(content=s.content_figures(
+[os.path.join(figpath_2017, figname) for figname in ['Friston12.png', 'Adams12.png', 'PerrinetAdamsFriston14header_small.png']], bgcolor="black",
+#title=title,
+fragment=True,
+transpose=True, height=s.meta['height']*.75,
+url=['http://invibe.net/LaurentPerrinet/Publications/' + name for name in ['Friston12', 'Adams12', 'PerrinetAdamsFriston14']]),
+notes="""
+* in a first study, we have proposed that PERCEPTION (following Helmhotz 1866) is an active process of hypothesis testing by which we seek to confirm our predictive models of the (hidden) world: Active inference: (cite TITLE). In theory, one could find any prior to fit any experimental data, but the beauty of the theory comes from the simplicity of the models chosen to model the data at hand, such as saccades...
+
+* ... and even better if these models may find a possible correspondance into the neural anatomy and explain some deviation to a control  behaviour, such as that we modelled for understanding some aspects of the EMs of schizophrenic patients
+
+* Today, I will again focus on the problem of sensorimotor delays in the optimal control of (smooth) eye movements under uncertainty. Specifically, we consider delays in the visuo-oculomotor loop and their implications for active inference and I will present the results presented in the following paper (show TITLE).
+
+""")
+
+
+# figpath = os.path.join(home, 'tmp/2015_RTC/2014-12-31_PerrinetAdamsFriston14/poster/12-06-25_AREADNE/')
+freemove_bib = s.content_bib("LP, Adams and Friston", "2015", 'Biological Cybernetics, <a href="http://invibe.net/LaurentPerrinet/Publications/PerrinetAdamsFriston14">http://invibe.net/LaurentPerrinet/Publications/PerrinetAdamsFriston14</a>')
+
+#for fname in ['figure1.png', 'figure2.png']:
+# figpath = os.path.join(home, 'quantic/2016_science/2016-10-13_LAW/figures')
+for fname, note in zip(['friston_figure1.png', 'friston_figure2.png', 'PAF14equations.png', 'PAF14equations2.png'], ["""
+
+* This schematic shows the dependencies among various quantities modelling exchanges of an agent with the environment. It shows the states of the environment and the system in terms of a probabilistic dependency graph, where connections denote directed (causal) dependencies. The quantities are described within the nodes of this graph -- with exemplar forms for their dependencies on other variables.
+
+* Hidden (external) and internal states of the agent are separated by action and sensory states. Both action and internal states -- encoding a conditional probability density function over hidden states -- minimise free energy. Note that hidden states in the real world and the form of their dynamics can be different from that assumed by the generative model; (this is why hidden states are in bold. )
+""","""
+*  Active inference uses a generalisation of Kalman filtering to provide Bayes optimal estimates of hidden states and action in generalized coordinates of motion. As we have seen previously, the central nervous system has to contend with axonal delays, both at the sensory and the motor levels. Representing hidden states in generalized coordinates provides a simple way of compensating for both these delays.
+
+* This mathematical framework can be mapped to the anatomy of the visual system. Similar to the sketch that we have shown above, "compiling" (that is, solving) the equations of Free-energy minimization forms a set of coupled differential equations which correpond to different node along the visuo-oculomotor pathways.
+""","""
+
+* a novelty of our approach including known delays was to take advantage of genralized coordinates to create an operator $T$ to travel back and forth in time with a delay $\tau$. It is simply formed by using a Taylor expansion of the succesive orders in the generalized coordinates which takes this form in matrix form and thus simply by taking the exponential matrix form.
+""","""
+Applying such an operator to the FEM generates a slightly different and more complicated formulation but it is important to note that to compensate for delays, there is no change in the structure of the network but just in how the synaptic weights are tuned (similar to what we had done in the first part)
+
+* The efficacy of this scheme will be illustrated using neuronal simulations of pursuit initiation responses, with and without compensation.
+
+"""]):
+    s.add_slide(#image_fname=os.path.join(figpath, fname),
+    content=s.content_figures(
+[os.path.join(figpath_2017, fname)], bgcolor="black",
+#title=title,
+ height=s.meta['height']*.90),# + freemove_bib,
+# >>> Lup IS HERE <<<
+notes=note)
+
+s.add_slide(content="""
+    <video controls autoplay loop width=99%/>
+      <source type="video/mp4" src="{}">
+    </video>
+    """.format(s.embed_video(os.path.join(figpath_2017, 'flash_lag_dot.mp4'))),
+notes="""
+
+Pursuit initiation
+
+""")
+#figpath = os.path.join(home, 'tmp/2015_RTC/2014-12-31_PerrinetAdamsFriston14/poster/12-06-25_AREADNE/')
+#for fname in ['Slide3.png', 'Slide4.png']:
+#figpath = os.path.join(home, 'tmp/2015_RTC/2014-04-17_HDR/friston/')
+for fname in ['friston_figure3.png',
+              'friston_figure4-A.png',
+              'friston_figure4-B.png',
+               'friston_figure4-C.png']:
+
+    s.add_slide(#image_fname=os.path.join(figpath, fname),
+    content=s.content_figures(
+[os.path.join(figpath_2017, fname)], bgcolor="black",
+#title=title,
+ height=s.meta['height']*.90),# + freemove_bib,
+notes="""
+
+This figure reports the conditional estimates of hidden states and causes during the simulation of pursuit initiation, using a single rightward (positive) sweep of a visual target, while compensating for sensory motor delays. We will use the format of this figure in subsequent figures: the upper left panel shows the predicted sensory input (coloured lines) and sensory prediction errors (dotted red lines) along with the true values (broken black lines). Here, we see horizontal excursions of oculomotor angle (upper lines) and the angular position of the target in an intrinsic frame of reference (lower lines). This is effectively the distance of the target from the centre of gaze and reports the spatial lag of the target that is being followed (solid red line). One can see clearly the initial displacement of the target that is suppressed after a few hundred milliseconds. The sensory predictions are based upon the conditional expectations of hidden oculomotor (blue line) and target (red line) angular displacements shown on the upper right. The grey regions correspond to 90% Bayesian confidence intervals and the broken lines show the true values of these hidden states. One can see the motion that elicits following responses and the oculomotor excursion that follows with a short delay of about 64ms. The hidden cause of these displacements is shown with its conditional expectation on the lower left. The true cause and action are shown on the lower right. The action (blue line) is responsible for oculomotor displacements and is driven by the proprioceptive prediction errors.
+
+* This figure illustrates the effects of sensorimotor delays on pursuit initiation (red lines) in relation to compensated (optimal) active inference -- as shown in the previous figure (blue lines). The left panels show the true (solid lines) and estimated sensory input (dotted lines), while action is shown in the right panels. Under pure sensory delays (top row), one can see clearly the delay in sensory predictions, in relation to the true inputs. The thicker (solid and dotted) red lines correspond respectively to (true and predicted) proprioceptive input, reflecting oculomotor displacement. The middle row shows the equivalent results with pure motor delays and the lower row presents the results with combined sensorimotor delays. Of note here is the failure of optimal control with oscillatory fluctuations in oculomotor trajectories, which become unstable under combined sensorimotor delays.
+
+""")
+
+#figpath = 'figures/'
+s.add_slide(content="""
+    <video controls autoplay loop width=99%/>
+      <source type="video/mp4" src="{}">
+    </video>
+    """.format(s.embed_video(os.path.join(figpath_2017, 'flash_lag_sin.mp4'))),
+notes="""
+
+Smooth Pursuit
+We then consider an extension of the generative model to simulate smooth pursuit eye movements --- in which the visuo-oculomotor system believes both the target and its centre of gaze are attracted to a (hidden) point moving in the visual field.
+""")
+#figpath = os.path.join(home, 'tmp/2015_RTC/2014-04-17_HDR/friston/')
+for fname in ['friston_figure6.png', 'friston_figure7.png']:
+    s.add_slide(#image_fname=os.path.join(figpath, fname),
+    content=s.content_figures(
+[os.path.join(figpath_2017, fname)], bgcolor="black",
+#title=title,
+ height=s.meta['height']*.90),# + freemove_bib,
+notes="""
+
+
+* This figure uses the same format as the previous figure -- the only difference is that the target motion has been rectified so that it is (approximately) hemi-sinusoidal. The thing to note here is that the improved accuracy of the pursuit previously apparent at the onset of the second cycle of motion has now disappeared -- because active inference does not have access to the immediately preceding trajectory. This failure of an anticipatory improvement in tracking is contrary to empirical predictions. \item \odot
+
+* the generative model has been equipped with a second hierarchical level that contains hidden states, modelling latent periodic behaviour of the (hidden) causes of target motion. With this addition, the improvement in pursuit accuracy apparent at the onset of the second cycle of motion is reinstated. This is because the model has an internal representation of latent causes of target motion that can be called upon even when these causes are not expressed explicitly in the target trajectory.
+
+""")
+figpath = 'figures/'
+s.add_slide(content="""
+    <video controls autoplay loop width=99%/>
+      <source type="video/mp4" src="{}">
+    </video>
+    """.format(s.embed_video(os.path.join(figpath_2017, 'flash_lag_sin2.mp4'))),
+notes="""
+
+Smooth Pursuit with oclusion
+Finally, the generative model is equipped with a hierarchical structure, so that it can recognise and remember unseen (occluded) trajectories and emit anticipatory responses.
+""")
+#figpath = os.path.join(home, 'tmp/2015_RTC/2014-12-31_PerrinetAdamsFriston14/poster/12-06-25_AREADNE/')
+
+#figpath = os.path.join(home, 'tmp/2015_RTC/2014-04-17_HDR/friston/')
+for fname in ['friston_figure8.png', 'friston_figure9bis.png']:
+    s.add_slide(#image_fname=os.path.join(figpath, fname),
+    content=s.content_figures(
+[os.path.join(figpath_2017, fname)], bgcolor="black",
+#title=title,
+ height=s.meta['height']*.90),# + freemove_bib,
+notes="""
+
+
+* This figure uses the same format as the previous figure -- the only difference is that the target motion has been rectified so that it is (approximately) hemi-sinusoidal. The thing to note here is that the improved accuracy of the pursuit previously apparent at the onset of the second cycle of motion has now disappeared -- because active inference does not have access to the immediately preceding trajectory. This failure of an anticipatory improvement in tracking is contrary to empirical predictions. \item \odot
+
+* the generative model has been equipped with a second hierarchical level that contains hidden states, modelling latent periodic behaviour of the (hidden) causes of target motion. With this addition, the improvement in pursuit accuracy apparent at the onset of the second cycle of motion is reinstated. This is because the model has an internal representation of latent causes of target motion that can be called upon even when these causes are not expressed explicitly in the target trajectory.
+
+""")
+
+s.close_section()
+
+i_section += 1
+###############################################################################
+# 🏄🏄🏄🏄🏄🏄🏄🏄         Back to the present - 15''              🏄🏄🏄🏄🏄🏄🏄🏄
+###############################################################################
+###############################################################################
+
+s.open_section()
+title = meta['sections'][i_section]
+s.add_slide_outline(i_section,
+notes="""
+let's move to the second part : at the cortical leval
+
+
+""")
+
+fle_bib = s.content_bib("Khoei, Masson and LP", "2017", 'In press, PLoS CB <a href="http://invibe.net/LaurentPerrinet/Publications/KhoeiMassonPerrinet17">http://invibe.net/LaurentPerrinet/Publications/KhoeiMassonPerrinet17</a>')
+
+s.add_slide(content="""
+    <video controls autoplay loop width=99%/>
+      <source type="video/mp4" src="{}">
+    </video>
+    """.format(s.embed_video(os.path.join(figpath_2017, 'flash_lag.mp4'))) + fle_bib,
+   notes="""
+
+so let's go back on earth
+
+* ... but first let now apply this model compensating for the aforementioned visual delays using a well described visual illusion: the flash-lag effect:
+
+a first stimulus moves continuously across the screen along the central horizontal axis. In the FLE, as this moving stimulus reaches the center of the screen, a second stimulus is flashed just above it and in perfect vertical alignment. Despite the fact that the respective horizontal positions of each stimulus are physically identical when the flash occurs, the moving stimulus is most often perceived *ahead* of the flashed one.
+
+debate for 80 years revived recently
+
+- motion extrapolation
+- differential latency
+- post-diction
+
+we propose to extend the hypothesis previously proposed by Nihjawan that this effect is caused by the extrapolation of the stimulus' motion to compensate for the neural delay. However, this hypothesis was challenged by other hypothesis that this effect is due to either anatomy (differential latencies) or to the way visual awareness processes the sequence of events (the post-diction from Eagleman)
+
+As a matter of fact, the motion extrapolation hypothesis was challenged because you can notice that the FLE is still present at initiation of the movement but this effect is not seen if the moving dot abruptly stops at the moment of the flash
+
+
+
+""")
+
+
+for txt in ['', '2']:
+    s.add_slide(content=s.content_figures(
+[os.path.join(figpath_talk, 'FLE_DiagonalMarkov_simple' + txt + '.png')], title=title, height=s.meta['height']*.75) + fle_bib,
+   notes="""
+* Our model is very simple:  Following what Nihjawan called a "diagonal model", we have proposed to extend a motion-based predictive coding model by including the known sensory delay in the prediction-estimation loop
+
+* More formally, the estimated state vector $z = \{x, y, u, v\}$ is composed of the 2D position ($x$ and $y$) and velocity ($u$ and $v$) of a (possibly moving) stimulus. As such, we extend  Nijhawan's diagonal model into a classical Markov chain in order to take into account the known neural delay $\tau$: At time $t$, information is integrated until time $t-\tau$, using a Markov chain and a model of state transitions $p(z_t |z_{t-\delta t})$ such that one can infer the state until the last accessible information $p(z_{t-\tau} | I_{0:(t-\tau)})$. This information can then be ``pushed'' forward in time by predicting its trajectory from $t-\tau$ to $t$. Interestingly, we use the same model of state transition at the time scale of the delay, that is, $p(z_t | z_{t-\tau})$.
+
+* Importantly, the model for transition is based on a simple model of the transport of visual information *knowing the velocity*. Indeed, knowing $z(t-\Delta t)$ we may infer the future position of this motion at time $t$ by using Newton's first law of mechanics. The precision of the state transition (as given by the shaded area) tunes the strength of this prediction as a diffusion parameter.
+
+* Such a model can be implemented in a two-layered neural network including a source (input) and a target (predictive) layer~\citep{KaplanKhoei14}. The source layer receives the delayed sensory information and encodes both position and velocity topographically on the different retinotopic maps of each layer. Notice that here, for simplicity, we show only one 2D map of the motions $(x, v)$. Crucially, the delay compensation in this motion-based prediction model, is simply implemented by connecting each source neuron to a predictive neuron corresponding to the corrected position of stimulus $(x+v\cdot \tau, v)$ in the target layer. The precision of this anisotropic connectivity map can be tuned by the width of convergence from the source to the target populations. We will see on Friday that this property (that it is implemented in the connectivity) extends to more complex, multi-layered systems which may generalize to more complex trajectories.
+
+""")
+# * In particular we have used an efficient implementation using particle filtering and all the code for reproducing this theory is available on my github.
+
+
+for method in ['PBP', 'MBP']:
+    s.add_slide(content="""
+	    <h3> Results using {method} </h3>
+		            <div align="center">
+        <video controls autoplay loop width=99%/>
+          <source type="video/mp4" src="{urldata}">
+        </video>
+		</div>
+        """.format(method=method, urldata=s.embed_video(os.path.join(figpath_2017, method + '_spatial_readout.mp4'))),
+notes="""
+* Let me show you now the results of our simulations on the standard flash-lag stimulus by first showing the results of a predictive system with no delay compensation. We here simply show the source layer in the prediction model which tries to track moving patterns but do not compensate for the known delay.
+
+* We observe that the moving dot is correctly tracked and the flash correctly detected. I have slowed down the speed of the movie to show that relative to each other, the flash and moving dot appear at the same position at the time of the flash.
+
+* The situation is different in the motion-based predictive system : in this slowed down movie, at the time the flash appears, the dot's position was predicted *ahead* of the position of the flash, similarly to what is reported in psychophysics.
+
+* Moreover, we have predicted a similar effect with a large range of parameters of the stimulus, such as speed or contrast. But for the moment, let us focus on the reasons why the model shows a similar behavior
+
+""")
+
+# for fname in ['FLE', 'FLE_histogram', 'FLE_MotionReversal']:
+for fname in ['FLE_histogram', 'FLE_MotionReversal_MBP', 'FLE_MotionReversal']:
+    s.add_slide(content=s.content_figures(
+[os.path.join(figpath_talk, fname + '.png')], title=title,
+height=s.meta['height']*.8) + fle_bib,
+   notes="""
+
+* For that, we replot the movies I have just shown by showing for the dot the Histogram of the estimated positions as a function of time for the source layer (Left) and the target layer (right). The left-hand column illustrates the predictive model before delay compensation. The right-hand column illustrates the motion extrapolation model with delay compensation. Histograms of the inferred horizontal positions (blueish bottom panel) and  horizontal speed (redish top panel) are shown in columns  as a function  of time. A darker level corresponds to a higher probability, while a light  color corresponds to an unlikely estimation. In particular, we focus on three  particular epochs along the trajectory, corresponding to the standard, flash  initiated and terminated cycles. The timing of these epochs flashes are indicated by  dashed vertical lines. In dark, the physical time and in green the delayed  input knowing $\tau=100~ms$.
+
+* Activity in both models shows three different phases. First, there is a rapid  build-up of the precision of the target after the first appearance of the  moving dot (at $t=300~ms$). Consistently with the Frölich effect, the  beginning of the trajectory is seen ahead of its physical position. During the second phase, the moving dot is correctly tracked as both its velocity and position are correctly inferred. In the source layer, there is no extrapolation and the trajectory follows the delayed trajectory of the dot (green dotted line). In the target layer, motion extrapolation correctly predicts the position at the present time and the position follows the actual physical position of the dot (black dotted line). Finally, the third phase corresponds to  motion termination. The moving dot disappears and the corresponding activity vanishes in the source layer at $t=900~ms$. However, between $t=800~ms$ and $t=900~ms$, the dot position was extrapolated and predicted ahead of the terminal position. At $t=900~ms$, while motion information is absent, the position information is still transiently consistent and extrapolated using a broad, centered prior distribution of speeds. Although it is less precise, this position of the dot at flash termination is therefore not perceived as leading the flash.
+
+* Interestingly, and thanks to the reviewers of the paper, we could extend our results to the estimation of the dot position from the dMBP model during the motion reversal experiment. In the motion reversal experiment, the moving dot reverses its direction  at the middle of the trajectory (i.e., at $t=500~ms$,  as indicated by the mid-point vertical dashed line).  In the left column (target layer) and as in previous slide, we show the histogram of inferred positions  during the dot motion and a trace of its position with the highest probability  as a function of time.  As expected, results are identical to that in the previous slide in the first half period.  At the moment of the motion reversal,  the model output is consistent with previous psychophysical reports.  First, the estimated position follows the extrapolated trajectory  until the (delayed) sensory information about the motion reversal reaches the system  (at $t=600~ms$, green vertical dashed line).  Then, the velocity is quickly reseted and converges to the new (reversed) motion  such that the estimated position ``jumps'' to a position corresponding  to the updated velocity.  In the right column (smoothed layer), we show the results of the same data  after a smoothing operation of $\tau_s=100~ms$ in subjective time.  This different read-out from the inferred positions  corresponds to the behavioral results obtained in some experiments,  such as that from~\citet{Whitney98}.
+
+""")
+s.close_section()
+
+
+i_section += 1
+###############################################################################
+# 🏄🏄🏄🏄🏄🏄🏄🏄         Perspectives - 5''              🏄🏄🏄🏄🏄🏄🏄🏄
+###############################################################################
+###############################################################################
+
+s.open_section()
+title = meta['sections'][i_section]
+s.add_slide_outline(i_section,
+notes="""
+what are the consequences?
+
+""")
+
 s.close_section()
 
 ###############################################################################
