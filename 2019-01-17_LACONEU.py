@@ -182,7 +182,7 @@ s.add_slide(content="""
     <video controls loop width=60%/>
       <source type="video/mp4" src="{}">
     </video>
-    """.format('https://raw.githubusercontent.com/laurentperrinet/2019-01-16_LACONEU/master/figures//ssc.mp4'))
+    """.format('https://raw.githubusercontent.com/laurentperrinet/2019-01-16_LACONEU/master/figures/ssc.mp4'))
 
 s.close_section()
 
