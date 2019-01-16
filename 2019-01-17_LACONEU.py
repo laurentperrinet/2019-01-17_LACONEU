@@ -86,12 +86,13 @@ figpath_people = os.path.join(home, 'Desktop/2017-01_LACONEU/people')
 Karl = s.content_imagelet(os.path.join(figpath_people, 'karl.jpg'), height_px)
 Mina = s.content_imagelet(os.path.join(figpath_people, 'mina.jpg'), height_px)
 Anna = s.content_imagelet(os.path.join(figpath_people, 'anna.jpg'), height_px)
-Python = s.content_imagelet('https://docs.python.org/3/_static/py.png', height_px)
+Python = s.content_imagelet('https://www.python.org/static/community_logos/python-powered-h-140x182.png', height_px)
 s.meta['Acknowledgements'] =f"""<h3>Acknowledgements:</h3>
    <ul>
     <li>Rick Adams and Karl Friston @ UCL - Wellcome Trust Centre for Neuroimaging</li>
     <li>Mina Aliakbari Khoei and Anna Montagnini - FACETS-ITN Marie Curie Training</li>
    </ul>
+
    {Karl}{Mina}{Anna}<a href="https://github.com/laurentperrinet/slides.py">{Python}</a>
 """
 ###############################################################################
