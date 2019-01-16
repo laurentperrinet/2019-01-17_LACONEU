@@ -153,19 +153,8 @@ From the head on, I wish to thanks people who collaborated  and in particular ..
 (fregnac chavane) + ANR TRAJECTORY (o marrre bruno cessac palacios )
 + LONDON (Jim Bednar, Friston)
 
-* (SHOW TITLE) I am interested in the link
-between the neural code and the structure of the world.
-in particular, for vision, I am researching
-the relation between the
-functional (in terms of the inferential processes leading to  behaviour)
-organization (anatomy and activity)
-of low-level visual areas (V1) and the structures of natural scenes,
-that is of the images that hit the retina and which are
-relevant to visual perception in general.
+* (SHOW TITLE) I am interested in ...
 
-so what is vision efficient? in particular if we look around us,
-images are formed by a relatively low number of features, which are arranged
-according to prototypical structures - lines, curves, contours
 """)
 
 
@@ -176,8 +165,7 @@ s.add_slide(content="""
     <video controls loop width=60%/>
       <source type="video/mp4" src="{}">
     </video>
-    """.format(#'figures/MP.mp4'), #
-                s.embed_video(os.path.join(figpath, 'MP.mp4'))),
+    """.format('https://raw.githubusercontent.com/laurentperrinet/2019-01-16_LACONEU/master/figures/v1_tiger.mp4')+review_bib,
             notes="""
 ... this video shows this intuition in a quantitative way. from a natural image,
 we extracted independent sources as individual edges at different scales and
@@ -189,107 +177,13 @@ we can quickly recognize the image
 natural images are sparse
 """)
 
-ols_bib = s.content_bib("Olshausen and Field", "1997", 'Sparse coding with an overcomplete basis set: A strategy employed by V1?')
-for i in [1, 2, 5]:
-    s.add_slide(content=s.content_figures(
-        [os.path.join(figpath_talk, 'Olshausen_'+ str(i) + '.png')], bgcolor="white", embed=False,
-        title=None, height=s.meta['height']*.85) + ols_bib,
-           notes="""
-a seminal idea is proposed by Olshausen:
-* this may be formalized as an inference problem:
 
-edges are different sources, which are known to be sparse:
-by mixing these sources one forms the image (transparency hypothesis)
+s.add_slide(content="""
+    <video controls loop width=60%/>
+      <source type="video/mp4" src="{}">
+    </video>
+    """.format('https://raw.githubusercontent.com/laurentperrinet/2019-01-16_LACONEU/master/figures//ssc.mp4'))
 
-the sparseness is characterized by the pdf of the sources coefficients
-
-* this inference problem is an inverse problem:
-
-* while this problem may be hard to solve, this may be approached using
-a (conjugate) gradient descent which has a nice implementation in terms of
-neural networks
-
-I wish to point here to an essential feature compared to classical feed-forward
-networks: you can not do the inference in one single shot in general;
-you need a recurrent / recursive network  (see arrow) and this is precisely
-a possible function for one of the most numerous type of synapses: short-ranges
-lateral interactions
-
-""")
-
-
-
-figpath = os.path.join(home, 'pool/science/PerrinetBednar15/talk/')
-# anatomical
-s.add_slide(content=s.content_figures(
-        [os.path.join(figpath, 'Bosking97Fig4.jpg')], title=None,
-            height=s.meta['height']*.85) +
-            s.content_bib("Bosking et al.", "1997", " Journal of Neuroscience"),
-            notes="""
-in the primary visual cortex for instance,
- the set of long-range lateral connections between neurons, which could
-act to facilitate detection of contours matching the association field, and/or
-inhibit detection of other contours. To fill this role, the lateral connections
-would need to be orientation specific and aligned along contours, * (colin) and
-indeed such an arrangement has been found in treeshrew's primary visual
-cortex  (Bosking et al., J Neurosci 17:2112-27, 1997)
-* (neural) if one looks at  the primary visual area in the occipital lobe of the cortex
-using optical imaging as here in the treeshrew by Bosking and colleagues under the
-supervision of DF, one could represent the distributed, topographical representation
-of orientation selectivity. in (A) and (B) the orientation giving the most response
-at each cortical position is represented by hue using the code below from orange for
-horizontal to blue for verticals, and typical structures are magnified in (C): stripes
-(on the periphery) and pinwheels. You can understand this as a packing of a 3D feature
-space on the 2D surface of the cortex.
-* (method)  Tree shrew orientation preference maps were obtained using optical imaging.
-Additionally, 540 nm light was used to map surface blood vessels used for alignment.
-Biocytin was then injected into a specific site in V1 and the animal was sacrificed 16
-hours later. Slices of V1 were imaged to locate the biocytin bouton and the surface
-blood vessels. The blood vessel information was then used to align the orientation
-preference maps with the bouton images giving overlaid information on the underlying
-connectivity from the injection site on the animal. The original experiment used a total
-of ten cases.
-* (lateral) we show here one result of Bosking
-which overlay over a map or orientation selectivity the network of lateral connectivity
-originating froma group of neurons with similar orientations and position. There is
-a structure in this connectivity towards locality (more pronounced for site B) +
-connecting iso orientations even on long ranges (A). This type of structure tends
-to wire together those neurons that have similar orientations, indicating a prior
-to colinearities.
-*(colin) ... Overall, a typical assumption that the role of lateral interactions is to
-enhance the activity of neurons which are collinear : it is the so-called
-**association field** formalized in Field 93, as was for instance modeled neurally in
-the work from P. Series or in this version for computer vision
-* (physio) is there a match of these structures with the statistics of natural images?
- 2) Some authors (Kisvarday, 1997, Chavane and Monier) even say it is weak or
-inexistent on a the scale of the area... 1:  Hunt & Goodhill have reinterpreted above data and shown that there is more diversity
-than that -
-* TRANSITION : my goal here will be to tackle this problem at different levels:
-""")
-
-
-
-#Jens Kremkow, Laurent U Perrinet, Cyril Monier, Jose-Manuel Alonso, Ad Aertsen, Yves Fregnac, Guillaume S Masson. Push-pull receptive field organization and synaptic depression: Mechanisms for reliably encoding naturalistic stimuli in V1, URL URL2 URL3 . Frontiers in Neural Circuits, 2016
-
-jens_bib = s.content_bib("Kremkow, LP, Monier, Alonso, Aertsen, Fregnac, Masson", "2016", 'Push-pull receptive field organization and synaptic depression: Mechanisms for reliably encoding naturalistic stimuli in V1', url='http://invibe.net/LaurentPerrinet/Publications/Kremkow16')
-jens_url = 'https://www.frontiersin.org/files/Articles/190318/fncir-10-00037-HTML/image_m/'
-jens_url = 'figures/'
-for l in ['a', 'b', '']:
-    s.add_slide(content=s.content_figures(
-        [jens_url + 'fncir-10-00037-g001' + l + '.jpg'], bgcolor="white",
-        title=None, embed=False, height=s.meta['height']*.8) + jens_bib,
-           notes="""
-
-""")
-
-# https://www.frontiersin.org/files/Articles/190318/fncir-10-00037-HTML/image_m/fncir-10-00037-g004.jpg
-# https://www.frontiersin.org/files/Articles/190318/fncir-10-00037-HTML/image_m/fncir-10-00037-g005.jpg
-s.add_slide(content=s.content_figures(
-        [jens_url + 'fncir-10-00037-g004.jpg', jens_url + 'fncir-10-00037-g005.jpg'], bgcolor="white", fragment=True,
-        title=None, embed=False, height=s.meta['height']*.8) + jens_bib,
-           notes="""
-
-""")
 s.close_section()
 
 i_section += 1
