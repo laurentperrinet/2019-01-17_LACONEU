@@ -42,8 +42,8 @@ meta = dict(
  bgcolor="white",
  author='Laurent Perrinet, INT',
  author_link='<a href="http://invibe.net">Laurent Perrinet</a>',
- short_title='Efficient coding of visual information in neural computations',
- title='Efficient coding of visual information in neural computations',
+ short_title='Role of dynamics in neural computations underlying  visual processing',
+ title='Role of dynamics in neural computations underlying  visual processing',
  conference_url='http://www.laconeu.cl',
  short_conference='LACONEU 2019',
  conference='LACONEU 2019: 5th Latin-American Summer School in Computational Neuroscience',
@@ -60,9 +60,10 @@ wiki_extras="""
 <<Include(AnrHorizontalV1Aknow)>>
 ----
 TagYear{YY} TagTalks [[TagAnrHorizontalV1]]""".format(YY=str(YYYY)[-2:]),
-sections=['Efficiency, vision and neurons',
-          'Sparse coding in the retina?',
-          'Sparse Hebbian Learning']
+sections=['About Dynamics, vision and neurons',
+          'Active Inference',
+          'Back to the present',
+          'Perspectives ?']
 )
 
 # https://pythonhosted.org/PyQRCode/rendering.html
