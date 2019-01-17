@@ -590,7 +590,7 @@ observed for both the observed activity and the non-linearities.
 """)
 
 # benvenuti & Taouali
-BT_bib = s.content_bib("Benvenuti, Taouali, LP, Chavane", "", 'in prep')
+BT_bib = s.content_bib("Benvenuti, Taouali, LP, Chavane", 'in prep', "")
 for i in ['1', '2', '3']:
     s.add_slide(content=s.content_figures(
         [os.path.join(figpath_talk, 'ExperimentalResult_'+ i + '.png')], bgcolor="white", embed=False,
