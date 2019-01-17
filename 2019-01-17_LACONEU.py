@@ -471,7 +471,7 @@ for txt in ['', '2']:
 for method in ['PBP', 'MBP']:
     s.add_slide(content="""
 	    <h3> Results using {method} </h3>
-		 video controls autoplay loop width=50%/>
+		 <video controls autoplay loop width=50%/>
           <source type="video/mp4" src="{urldata}">
         </video>
         """.format(method=method, urldata=s.embed_video(os.path.join(figpath_2017, method + '_spatial_readout.mp4'))),
