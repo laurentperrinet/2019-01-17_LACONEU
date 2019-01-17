@@ -454,7 +454,8 @@ As a matter of fact, the motion extrapolation hypothesis was challenged because 
 
 for txt in ['', '2']:
     s.add_slide(content=s.content_figures(
-[os.path.join(figpath_talk, 'FLE_DiagonalMarkov_simple' + txt + '.png')], title=title, height=s.meta['height']*.75) + fle_bib,
+[os.path.join(figpath_talk, 'FLE_DiagonalMarkov_simple' + txt + '.png')], embed=False,
+                title=title, height=s.meta['height']*.75) + fle_bib,
    notes="""
 * Our model is very simple:  Following what Nihjawan called a "diagonal model", we have proposed to extend a motion-based predictive coding model by including the known sensory delay in the prediction-estimation loop
 
@@ -488,7 +489,7 @@ notes="""
 # for fname in ['FLE', 'FLE_histogram', 'FLE_MotionReversal']:
 for fname in ['FLE_histogram', 'FLE_MotionReversal_MBP', 'FLE_MotionReversal']:
     s.add_slide(content=s.content_figures(
-[os.path.join(figpath_talk, fname + '.png')], title=title,
+[os.path.join(figpath_talk, fname + '.png')], title=title, embed=False,
 height=s.meta['height']*.8) + fle_bib,
    notes="""
 
@@ -587,7 +588,7 @@ observed for both the observed activity and the non-linearities.
 """)
 
 # benvenuti & Taouali
-BT_bib = s.content_bib("benvenuti, Taouali, LP, Chavane", "", 'in prep')
+BT_bib = s.content_bib("Benvenuti, Taouali, LP, Chavane", "", 'in prep')
 for i in ['1', '2', '3']:
     s.add_slide(content=s.content_figures(
         [os.path.join(figpath_talk, 'ExperimentalResult_'+ i + '.png')], bgcolor="white", embed=False,
@@ -598,6 +599,15 @@ for i in ['1', '2', '3']:
 
 # waves with B. Cessac
 
+LM_bib = s.content_bib("Muller, Chavane, Reynolds, Sejnowski", "2018", 'Cortical travelling waves: mechanisms and computational principles, Nature Reviews Neuroscience 19 (5), 255', url='http://www.its.caltech.edu/~bi250c/papers/Muller-2018.pdf')
+# benvenuti & Taouali
+for i in ['1', '2', '3']:
+    s.add_slide(content=s.content_figures(
+        [os.path.join(figpath_talk, 'Muller18_3.png')], bgcolor="white", embed=False,
+        title=None, height=s.meta['height']*.85) + LM_bib,
+           notes="""
+
+""")
 s.close_section()
 
 ###############################################################################
