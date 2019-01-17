@@ -471,11 +471,9 @@ for txt in ['', '2']:
 for method in ['PBP', 'MBP']:
     s.add_slide(content="""
 	    <h3> Results using {method} </h3>
-		            <div align="center">
-        <video controls autoplay loop width=50%/>
+		 video controls autoplay loop width=50%/>
           <source type="video/mp4" src="{urldata}">
         </video>
-		</div>
         """.format(method=method, urldata=s.embed_video(os.path.join(figpath_2017, method + '_spatial_readout.mp4'))),
 notes="""
 * Let me show you now the results of our simulations on the standard flash-lag stimulus by first showing the results of a predictive system with no delay compensation. We here simply show the source layer in the prediction model which tries to track moving patterns but do not compensate for the known delay.
