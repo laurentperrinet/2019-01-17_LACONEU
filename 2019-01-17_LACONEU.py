@@ -601,7 +601,7 @@ for i in ['1', '2', '3']:
 
 # waves with B. Cessac
 
-LM_bib = s.content_bib("Muller, Chavane, Reynolds, Sejnowski", "2018", 'Cortical travelling waves: mechanisms and computational principles, Nature Reviews Neuroscience 19 (5), 255', url='http://www.its.caltech.edu/~bi250c/papers/Muller-2018.pdf')
+LM_bib = s.content_bib("Muller, Chavane, Reynolds, Sejnowski", "2018", 'Nature Reviews Neuroscience 19 (5), 255', 'Cortical travelling waves: mechanisms and computational principles',  url='http://www.its.caltech.edu/~bi250c/papers/Muller-2018.pdf')
 # benvenuti & Taouali
 for i in ['1', '2', '3']:
     s.add_slide(content=s.content_figures(
