@@ -142,16 +142,15 @@ s.add_slide(content=intro,
 la Timone in Marseille, a joint unit from the CNRS and the AMU
 
 * (OBJECTIVE) in this talk, I will be focus in highlighting
-some key challenges in understanding visual perception
-in terams of efficient coding
-using modelization and neural data
-* please interrupt
+some key challenges in understanding the role of dynamics in visual perception
+
+* please interrupt me !
 
 * (ACKNO) this endeavour involves different techniques and tools ...
 From the head on, I wish to thanks people who collaborated  and in particular ..
   mostly funded by the ANR horizontal V1
 (fregnac chavane) + ANR TRAJECTORY (o marrre bruno cessac palacios )
-+ LONDON (Jim Bednar, Friston)
++ LONDON (Mina, Anna, Rick, Karl)
 
 * (SHOW TITLE) I am interested in ...
 
@@ -190,11 +189,11 @@ s.add_slide(content=s.content_figures(
    height=s.meta['height']*.90),
 notes="""
 
- * today, I would like  to focus on a particular problem which will help us unravel the dynamics of decision making: oculomotor delays. Indeed, one challenge for modelling is to understand EMs using AI as a problem of optimal motor control under axonal delays. The central nervous system has to contend with axonal delays, both at the sensory and the motor levels. For instance, in the human visuo-oculomotor system, it takes approximately $ \tau_s=50~ms$ for the retinal image to reach the visual areas implicated in motion detection, and a further $ \tau_m=40~ms $ to reach the oculomotor muscles.
+ * today, I would like  to focus on a particular problem which will help us unravel the dynamics of decision making: oculomotor delays.
+ *
+  The central nervous system has to contend with axonal delays, both at the sensory and the motor levels. For instance, in the human visuo-oculomotor system, it takes approximately $ \tau_s=50~ms$ for the retinal image to reach the visual areas implicated in motion detection, and a further $ \tau_m=40~ms $ to reach the oculomotor muscles.
 
- * challenging - see Thorpe's monkey
-
- * how does this impact behaviour?
+ * how does this impact behaviour? Indeed, one challenge for modelling is to understand EMs using AI as a problem of optimal motor control under axonal delays.
  """)
 
 figpath_2017 = os.path.join(home, 'Desktop/2017-01_LACONEU/figures/')
@@ -203,9 +202,9 @@ s.add_slide(content=s.content_figures(
    [os.path.join(figpath_2017, 'tsonga.png')], bgcolor="black",
    height=s.meta['height']*.90),
    notes="""
+* let's move to a human, in particular a tennis player ---here (highly trained) Jo-Wilfried Tsonga at Wimbledon---...
 
-
-* ... As a consequence, for a tennis player ---here (highly trained) Jo-Wilfried Tsonga at Wimbledon--- trying to intercept a passing-shot ball at a (conservative) speed of $20~m.s^{-1}$, the position sensed on the retinal space corresponds to the instant when its image formed on the photoreceptors of the retina and reaches our hypothetical motion perception area behind:
+* ...  trying to intercept a passing-shot ball at a (conservative) speed of $20~m.s^{-1}$, the position sensed on the retinal space corresponds to the instant when its image formed on the photoreceptors of the retina and reaches our hypothetical motion perception area behind:
 
  """)
 s.add_slide(content=s.content_figures(
@@ -224,14 +223,8 @@ s.add_slide(content=s.content_figures(
 
 s.add_slide(content=s.content_figures(
    [os.path.join(figpath_2017, 'back-to-the-future-quotes-dr-emmett-brown.jpg')], bgcolor="black",
-   height=s.meta['height']*.90),#)
-
-# s.add_slide(content=s.content_figures(
-#    [os.path.join(figpath, 'figure-tsonga-AB.png')], bgcolor="black",
-#    height=s.meta['height']*.90),
-   #image_fname=os.path.join(figpath, 'figure-tsonga-AB.png'),  embed=False,
-#s.add_slide_outline(
-notes="""
+   height=s.meta['height']*.90),
+   notes="""
 WOW! THIS LOOKS COMPLICATED!
 
 Luckily, we can integrat'e that in the free-energy formalism
