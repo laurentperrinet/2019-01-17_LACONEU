@@ -41,16 +41,16 @@ meta = dict(
  theme='simple',
  bgcolor="white",
  author='Laurent Perrinet, INT',
- author_link='<a href="http://invibe.net">Laurent Perrinet</a>',
- short_title='Role of dynamics in neural computations underlying  visual processing',
- title='Role of dynamics in neural computations underlying  visual processing',
+ author_link='<a href="https://laurentperrinet.github.io">Laurent Perrinet</a>',
+ short_title='Role of dynamics in neural computations underlying visual processing',
+ title='Role of dynamics in neural computations underlying visual processing',
  conference_url='http://www.laconeu.cl',
  short_conference='LACONEU 2019',
  conference='LACONEU 2019: 5th Latin-American Summer School in Computational Neuroscience',
  location='Valparaiso (Chile)',
  YYYY=YYYY, MM=MM, DD=DD,
  tag=tag,
- url='http://invibe.net/LaurentPerrinet/Presentations/' + tag,
+ url=f'https://laurentperrinet.github.io/{tag}',
  abstract="""
 """,
 wiki_extras="""
@@ -483,7 +483,7 @@ for method in ['PBP', 'MBP']:
     s.add_slide(content="""
 	    <h3> Results using {method} </h3>
 		            <div align="center">
-        <video controls autoplay loop width=99%/>
+        <video controls autoplay loop width=61%/>
           <source type="video/mp4" src="{urldata}">
         </video>
 		</div>
@@ -530,6 +530,13 @@ what are the consequences?
 
 """)
 
+# https://invibe.net/LaurentPerrinet/Publications/Chemla18?highlight=%28%28TagAnrHorizontalV1%29%29
+# Chemla S, Reynaud A, di Volo M, Zerlaut Y, Perrinet L, Destexhe A, Chavane F. Suppressive waves disambiguate the representation of long-range apparent motion in awake monkey V1, URL . 2018 abstract.
+
+# benvenuti & Taouali
+
+# waves with B. Cessac
+
 s.close_section()
 
 ###############################################################################
@@ -554,19 +561,13 @@ if slides_filename is None:
 
 = {title}  =
 
- Quoi:: [[{conference_url}|{conference}]]
- Qui:: {author}
- Quand:: {DD}/{MM}/{YYYY}
- Où:: {location}
- Support visuel:: https://laurentperrinet.github.io/{tag}
-
-
  What:: talk @ the [[{conference_url}|{conference}]]
  Who:: {author}
  When:: {DD}/{MM}/{YYYY}
  Where:: {location}
  Slides:: https://laurentperrinet.github.io/{tag}
  Code:: https://github.com/laurentperrinet/{tag}/
+
 == reference ==
 {{{{{{
 #!bibtex
