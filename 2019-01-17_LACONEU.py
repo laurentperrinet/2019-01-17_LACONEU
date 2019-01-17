@@ -291,12 +291,8 @@ notes="""
 
 """)
 
-
-# figpath = os.path.join(home, 'tmp/2015_RTC/2014-12-31_PerrinetAdamsFriston14/poster/12-06-25_AREADNE/')
 freemove_bib = s.content_bib("LP, Adams and Friston", "2015", 'Biological Cybernetics, <a href="http://invibe.net/LaurentPerrinet/Publications/PerrinetAdamsFriston14">http://invibe.net/LaurentPerrinet/Publications/PerrinetAdamsFriston14</a>')
 
-#for fname in ['figure1.png', 'figure2.png']:
-# figpath = os.path.join(home, 'quantic/2016_science/2016-10-13_LAW/figures')
 for fname, note in zip(['friston_figure1.png', 'friston_figure2.png', 'PAF14equations.png', 'PAF14equations2.png'], ["""
 
 * This schematic shows the dependencies among various quantities modelling exchanges of an agent with the environment. It shows the states of the environment and the system in terms of a probabilistic dependency graph, where connections denote directed (causal) dependencies. The quantities are described within the nodes of this graph -- with exemplar forms for their dependencies on other variables.
@@ -319,7 +315,7 @@ Applying such an operator to the FEM generates a slightly different and more com
     content=s.content_figures(
 [os.path.join(figpath_2017, fname)], bgcolor="black",
 #title=title,
- height=s.meta['height']*.90),# + freemove_bib,
+ height=s.meta['height']*.85),# + freemove_bib,
 # >>> Lup IS HERE <<<
 notes=note)
 
@@ -476,7 +472,7 @@ for method in ['PBP', 'MBP']:
     s.add_slide(content="""
 	    <h3> Results using {method} </h3>
 		            <div align="center">
-        <video controls autoplay loop width=61%/>
+        <video controls autoplay loop width=50%/>
           <source type="video/mp4" src="{urldata}">
         </video>
 		</div>
