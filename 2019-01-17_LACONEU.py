@@ -82,18 +82,20 @@ if not os.path.isfile(figname):
 print(meta['sections'])
 
 s = Slides(meta)
-figpath_people = os.path.join(home, 'Desktop/2017-01_LACONEU/people')
+figpath_people = os.path.join(home, 'ownCNRS/2019-01_LACONEU/people')
 Karl = s.content_imagelet(os.path.join(figpath_people, 'karl.jpg'), height_px)
 Mina = s.content_imagelet(os.path.join(figpath_people, 'mina.jpg'), height_px)
 Anna = s.content_imagelet(os.path.join(figpath_people, 'anna.jpg'), height_px)
+Fredo = s.content_imagelet(os.path.join(figpath_people, 'fredo.png'), height_px)
 Python = s.content_imagelet('https://www.python.org/static/community_logos/python-powered-h-140x182.png', height_px)
 s.meta['Acknowledgements'] =f"""<h3>Acknowledgements:</h3>
 <ul>
     <li>Rick Adams and Karl Friston @ UCL - Wellcome Trust Centre for Neuroimaging</li>
     <li>Mina Aliakbari Khoei and Anna Montagnini - FACETS-ITN Marie Curie Training</li>
+    <li>Frédéric CHAVANE - INT</li>
 </ul>
 <BR>
-{Karl}{Mina}{Anna}<a href="https://github.com/laurentperrinet/slides.py">{Python}</a>
+{Karl}{Mina}{Anna}{Fredo}<a href="https://github.com/laurentperrinet/slides.py">{Python}</a>
 """
 ###############################################################################
 # 🏄🏄🏄🏄🏄🏄🏄🏄         intro  - motivation - teaser        🏄🏄🏄🏄🏄🏄🏄🏄
@@ -606,7 +608,7 @@ for i in ['1', '2', '3']:
         [os.path.join(figpath_talk, 'Muller18_3.png')], bgcolor="white", embed=False,
         title=None, height=s.meta['height']*.85) + LM_bib,
            notes="""
-
+The role of cortical waves in shaping the dynamic processing of visual information
 """)
 s.close_section()
 
