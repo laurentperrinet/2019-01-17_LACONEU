@@ -518,7 +518,7 @@ what are the consequences?
 
 # https://invibe.net/LaurentPerrinet/Publications/Chemla18
 # Chemla S, Reynaud A, di Volo M, Zerlaut Y, Perrinet L, Destexhe A, Chavane F. Suppressive waves disambiguate the representation of long-range apparent motion in awake monkey V1, URL . 2018 abstract.
-AM_bib = s.content_bib("Chemla, Reynaud, di Volo, Zerlaut, Perrinet, Destexhe, Chavane", "2019", 'in revision', url=" https://invibe.net/LaurentPerrinet/Publications/Chemla18")
+AM_bib = s.content_bib("Chemla, Reynaud, di Volo, Zerlaut, LP, Destexhe, Chavane", "2019", 'in revision', url=" https://invibe.net/LaurentPerrinet/Publications/Chemla18")
 for i in ['1', '3a']:
     s.add_slide(content=s.content_figures(
         [os.path.join(figpath_talk, 'Chemla18_'+ i + '.png')], bgcolor="white", embed=False,
@@ -587,7 +587,14 @@ observed for both the observed activity and the non-linearities.
 """)
 
 # benvenuti & Taouali
+BT_bib = s.content_bib("benvenuti, Taouali, LP, Chavane", "", 'in prep')
+for i in ['1', '2', '3']:
+    s.add_slide(content=s.content_figures(
+        [os.path.join(figpath_talk, 'ExperimentalResult_'+ i + '.png')], bgcolor="white", embed=False,
+        title=None, height=s.meta['height']*.85) + BT_bib,
+           notes="""
 
+""")
 
 # waves with B. Cessac
 
