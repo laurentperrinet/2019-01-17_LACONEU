@@ -517,10 +517,78 @@ what are the consequences?
 
 """)
 
-# https://invibe.net/LaurentPerrinet/Publications/Chemla18?highlight=%28%28TagAnrHorizontalV1%29%29
+# https://invibe.net/LaurentPerrinet/Publications/Chemla18
 # Chemla S, Reynaud A, di Volo M, Zerlaut Y, Perrinet L, Destexhe A, Chavane F. Suppressive waves disambiguate the representation of long-range apparent motion in awake monkey V1, URL . 2018 abstract.
+AM_bib = s.content_bib("Chemla, Reynaud, di Volo, Zerlaut, Perrinet, Destexhe, Chavane", "2019", 'in revision', url=" https://invibe.net/LaurentPerrinet/Publications/Chemla18")
+for i in ['1', '3a']:
+    s.add_slide(content=s.content_figures(
+        [os.path.join(figpath_talk, 'Chemla18_'+ i + '.png')], bgcolor="white", embed=False,
+        title=None, height=s.meta['height']*.85) + AM_bib,
+           notes="""
+Figure 1:
+​
+​
+Experimental protocol and time-sequence of the cortical response to the long-range
+apparent motion (lrAM).
+​​
+A:
+​
+ Two-step lrAM stimuli are presented to two awake fixating monkeys in
+their bottom left visual field, while recording in their right visual cortex using VSDI.
+​
+B:
+​
+ Spatio-temporal
+characteristics of lrAM stimuli, i.e. duration (DUR) , interstimulus interval (ISI) and spatial interval (SI),
+were varied to cover a [5-66.6]°/s range of speed.
+​
+C-E:
+​
+ Cortical representation of evoked VSDI activity as
+a function of time, in response to respectively, a 100 ms local stimulus in the down position, another one
+Explaining away ambiguous representations in V1
+in the up position, and the sequence of these two stimuli (ISI  = 50 ms and SI = 1°). The cortical area
+imaged is shown at upper left. The edge of the image color codes the retinotopic borders as represented
+in A such as the vertical meridian (magenta), eccentricities (green and blue). Scale bar: 2 mm; A:
+anterior, P: posterior, M: medial, L: lateral. Time in milliseconds after stimulus onset is shown at the top,
+while stimulation time is drawn at the bottom of each row (black lines).
+​
+F:
+​
+ Activity pattern predicted by
+the linear combination in space and time of the response to stimulus 1 (row C) and the response to
+stimulus 2 (row D).
+​
+G:
+​
+Suppression pattern obtained by subtracting the observed apparent motion
+response (row E) and the linear prediction (row F). Red contours delimit amplitude activity above a
+certain threshold: 1
+ in panels C-F and  -0.5
+ in panel G.
+
+Figure 3:  The apparent motion stimulus induces a systematic suppression wave.
+​
+ Spatio-temporal
+representation of VSDI responses to two-stroke apparent motion stimuli for three different speed
+(6.6°/s, 10°/s and 33.3 °/s) and two animals (
+​
+A:
+​
+ monkey WA,
+​
+B:
+​
+ monkey BR). The upper rows of A and B
+represent the observed response and the lower rows the non-linearities of the response (observed -
+linear prediction). Estimates of speed propagation are reported on each ST diagram (black stairs-step are
+contours at threshold level, slanting lines are the slope of the linear regression). Similar values are
+observed for both the observed activity and the non-linearities.
+
+""")
 
 # benvenuti & Taouali
+
 
 # waves with B. Cessac
 
