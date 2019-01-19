@@ -1,4 +1,4 @@
-default: print
+default: github
 
 SRC=2019-01-17_LACONEU
 
@@ -19,7 +19,7 @@ github: html
 	open https://laurentperrinet.github.io/$(SRC)
 
 
-print: html
+print: github
 	#open -a /Applications/Chromium.app https://laurentperrinet.github.io/$(SRC)/?print-pdf&showNotes=true
 	#open "https://laurentperrinet.github.io/$(SRC)/?print-pdf&showNotes=true"
 	/Applications/Chromium.app/Contents/MacOS/Chromium --headless --disable-gpu --print-to-pdf=$(SRC).pdf "https://laurentperrinet.github.io/$(SRC)/?print-pdf"
