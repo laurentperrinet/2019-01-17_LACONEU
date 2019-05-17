@@ -204,8 +204,8 @@ s.add_slide(content=s.content_figures(
 * let's move to a human, in particular a tennis player ---here (highly trained) Jo-Wilfried Tsonga at Wimbledon---...
 
 * ...  trying to intercept a passing-shot ball at a (conservative) speed of $20~m.s^{-1}$, the position sensed on the retinal space corresponds to the instant when its image formed on the photoreceptors of the retina and reaches our hypothetical motion perception area behind:
-
  """)
+
 s.add_slide(content=s.content_figures(
    [os.path.join(figpath_talk, 'figure-tsonga.png')], bgcolor="black",
    height=s.meta['height']*.90),
