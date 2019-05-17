@@ -161,7 +161,6 @@ From the head on, I wish to thanks people who collaborated  and in particular ..
 
 review_bib = s.content_bib("LP", "2015", '"Sparse models" in <a href="http://invibe.net/LaurentPerrinet/Publications/Perrinet15bicv">Biologically Inspired Computer Vision</a>')
 
-figpath = os.path.join(home, 'Desktop/2017-01_LACONEU/figures/')
 s.add_slide(content="""
     <video controls loop width=60%/>
       <source type="video/mp4" src="{}">
@@ -198,10 +197,8 @@ notes="""
  * how does this impact behaviour? Indeed, one challenge for modelling is to understand EMs using AI as a problem of optimal motor control under axonal delays.
  """)
 
-figpath_2017 = os.path.join(home, 'Desktop/2017-01_LACONEU/figures/')
-
 s.add_slide(content=s.content_figures(
-   [os.path.join(figpath_2017, 'tsonga.png')], bgcolor="black",
+   [os.path.join(figpath_talk, 'tsonga.png')], bgcolor="black",
    height=s.meta['height']*.90),
    notes="""
 * let's move to a human, in particular a tennis player ---here (highly trained) Jo-Wilfried Tsonga at Wimbledon---...
@@ -210,7 +207,7 @@ s.add_slide(content=s.content_figures(
 
  """)
 s.add_slide(content=s.content_figures(
-   [os.path.join(figpath_2017, 'figure-tsonga.png')], bgcolor="black",
+   [os.path.join(figpath_talk, 'figure-tsonga.png')], bgcolor="black",
    height=s.meta['height']*.90),
    #image_fname=os.path.join(figpath, 'figure-tsonga.png'), embed=False,
        notes="""
@@ -223,8 +220,9 @@ s.add_slide(content=s.content_figures(
 
 """)
 
+print('figpath_talk', figpath_talk)
 s.add_slide(content=s.content_figures(
-   [os.path.join(figpath_2017, 'back-to-the-future-quotes-dr-emmett-brown.jpg')], bgcolor="black",
+   [os.path.join(figpath_talk, 'back-to-the-future-quotes-dr-emmett-brown.jpg')], bgcolor="black",
    height=s.meta['height']*.90),
    notes="""
 WOW! THIS LOOKS COMPLICATED!
@@ -279,11 +277,11 @@ Let's set up the problem
 # """)
 
 s.add_slide(content=s.content_figures(
-[os.path.join(figpath_2017, figname) for figname in ['Friston12.png', 'Adams12.png', 'PerrinetAdamsFriston14header_small.png']], bgcolor="black",
+[os.path.join(figpath_talk, figname) for figname in ['Friston12.png', 'Adams12.png', 'PerrinetAdamsFriston14header_small.png']], bgcolor="black",
 #title=title,
 fragment=True,
 transpose=True, height=s.meta['height']*.75,
-url=['http://invibe.net/LaurentPerrinet/Publications/' + name for name in ['Friston12', 'Adams12', 'PerrinetAdamsFriston14']]),
+url=['https://laurentperrinet.github.io/publication/' + name for name in ['friston-12', 'adams-12', 'perrinet-adams-friston-14']]),
 notes="""
 * in a first study, we have proposed that PERCEPTION (following Helmhotz 1866) is an active process of hypothesis testing by which we seek to confirm our predictive models of the (hidden) world: Active inference: (cite TITLE). In theory, one could find any prior to fit any experimental data, but the beauty of the theory comes from the simplicity of the models chosen to model the data at hand, such as saccades...
 
@@ -294,7 +292,6 @@ notes="""
 """)
 
 freemove_bib = s.content_bib("LP, Adams and Friston", "2015", 'Biological Cybernetics, <a href="http://invibe.net/LaurentPerrinet/Publications/PerrinetAdamsFriston14">http://invibe.net/LaurentPerrinet/Publications/PerrinetAdamsFriston14</a>')
-
 for fname, note in zip(['friston_figure1.png', 'friston_figure2.png', 'PAF14equations.png', 'PAF14equations2.png'], ["""
 
 * This schematic shows the dependencies among various quantities modelling exchanges of an agent with the environment. It shows the states of the environment and the system in terms of a probabilistic dependency graph, where connections denote directed (causal) dependencies. The quantities are described within the nodes of this graph -- with exemplar forms for their dependencies on other variables.
@@ -306,7 +303,7 @@ for fname, note in zip(['friston_figure1.png', 'friston_figure2.png', 'PAF14equa
 * This mathematical framework can be mapped to the anatomy of the visual system. Similar to the sketch that we have shown above, "compiling" (that is, solving) the equations of Free-energy minimization forms a set of coupled differential equations which correpond to different node along the visuo-oculomotor pathways.
 ""","""
 
-* a novelty of our approach including known delays was to take advantage of genralized coordinates to create an operator $T$ to travel back and forth in time with a delay $\tau$. It is simply formed by using a Taylor expansion of the succesive orders in the generalized coordinates which takes this form in matrix form and thus simply by taking the exponential matrix form.
+* a novelty of our approach including known delays was to take advantage of generalized coordinates to create an operator $T$ to travel back and forth in time with a delay $\tau$. It is simply formed by using a Taylor expansion of the succesive orders in the generalized coordinates which takes this form in matrix form and thus simply by taking the exponential matrix form.
 ""","""
 Applying such an operator to the FEM generates a slightly different and more complicated formulation but it is important to note that to compensate for delays, there is no change in the structure of the network but just in how the synaptic weights are tuned (similar to what we had done in the first part)
 
@@ -315,7 +312,7 @@ Applying such an operator to the FEM generates a slightly different and more com
 """]):
     s.add_slide(#image_fname=os.path.join(figpath, fname),
     content=s.content_figures(
-[os.path.join(figpath_2017, fname)], bgcolor="black",
+[os.path.join(figpath_talk, fname)], bgcolor="black",
 #title=title,
  height=s.meta['height']*.85),# + freemove_bib,
 # >>> Lup IS HERE <<<
@@ -325,7 +322,7 @@ s.add_slide(content="""
     <video controls autoplay loop width=99%/>
       <source type="video/mp4" src="{}">
     </video>
-    """.format(s.embed_video(os.path.join(figpath_2017, 'flash_lag_dot.mp4'))),
+    """.format(s.embed_video(os.path.join(figpath_talk, 'flash_lag_dot.mp4'))),
 notes="""
 
 Pursuit initiation
@@ -341,7 +338,7 @@ for fname in ['friston_figure3.png',
 
     s.add_slide(#image_fname=os.path.join(figpath, fname),
     content=s.content_figures(
-[os.path.join(figpath_2017, fname)], bgcolor="black",
+[os.path.join(figpath_talk, fname)], bgcolor="black",
 #title=title,
  height=s.meta['height']*.90),# + freemove_bib,
 notes="""
@@ -357,7 +354,7 @@ s.add_slide(content="""
     <video controls autoplay loop width=99%/>
       <source type="video/mp4" src="{}">
     </video>
-    """.format(s.embed_video(os.path.join(figpath_2017, 'flash_lag_sin.mp4'))),
+    """.format(s.embed_video(os.path.join(figpath_talk, 'flash_lag_sin.mp4'))),
 notes="""
 
 Smooth Pursuit
@@ -367,7 +364,7 @@ We then consider an extension of the generative model to simulate smooth pursuit
 for fname in ['friston_figure6.png', 'friston_figure7.png']:
     s.add_slide(#image_fname=os.path.join(figpath, fname),
     content=s.content_figures(
-[os.path.join(figpath_2017, fname)], bgcolor="black",
+[os.path.join(figpath_talk, fname)], bgcolor="black",
 #title=title,
  height=s.meta['height']*.90),# + freemove_bib,
 notes="""
@@ -383,7 +380,7 @@ s.add_slide(content="""
     <video controls autoplay loop width=99%/>
       <source type="video/mp4" src="{}">
     </video>
-    """.format(s.embed_video(os.path.join(figpath_2017, 'flash_lag_sin2.mp4'))),
+    """.format(s.embed_video(os.path.join(figpath_talk, 'flash_lag_sin2.mp4'))),
 notes="""
 
 Smooth Pursuit with oclusion
@@ -395,7 +392,7 @@ Finally, the generative model is equipped with a hierarchical structure, so that
 for fname in ['friston_figure8.png', 'friston_figure9bis.png']:
     s.add_slide(#image_fname=os.path.join(figpath, fname),
     content=s.content_figures(
-[os.path.join(figpath_2017, fname)], bgcolor="black",
+[os.path.join(figpath_talk, fname)], bgcolor="black",
 #title=title,
  height=s.meta['height']*.90),# + freemove_bib,
 notes="""
@@ -430,7 +427,7 @@ s.add_slide(content="""
     <video controls autoplay loop width=99%/>
       <source type="video/mp4" src="{}">
     </video>
-    """.format(s.embed_video(os.path.join(figpath_2017, 'flash_lag.mp4'))) + fle_bib,
+    """.format(s.embed_video(os.path.join(figpath_talk, 'flash_lag.mp4'))) + fle_bib,
    notes="""
 
 so let's go back on earth
@@ -476,7 +473,7 @@ for method in ['PBP', 'MBP']:
 	   <video controls autoplay loop width=50%/>
           <source type="video/mp4" src="{urldata}">
         </video>
-        """.format(method=method, urldata=s.embed_video(os.path.join(figpath_2017, method + '_spatial_readout.mp4'))),
+        """.format(method=method, urldata=s.embed_video(os.path.join(figpath_talk, method + '_spatial_readout.mp4'))),
 notes="""
 * Let me show you now the results of our simulations on the standard flash-lag stimulus by first showing the results of a predictive system with no delay compensation. We here simply show the source layer in the prediction model which tries to track moving patterns but do not compensate for the known delay.
 
@@ -603,8 +600,7 @@ for i in ['1', '2', '3']:
 
 LM_bib = s.content_bib("Muller, Chavane, Reynolds, Sejnowski", "2018", 'Nature Reviews Neuroscience 19 (5), 255', 'Cortical travelling waves: mechanisms and computational principles',  url='http://www.its.caltech.edu/~bi250c/papers/Muller-2018.pdf')
 # benvenuti & Taouali
-for i in ['1', '2', '3']:
-    s.add_slide(content=s.content_figures(
+s.add_slide(content=s.content_figures(
         [os.path.join(figpath_talk, 'Muller18_3.png')], bgcolor="white", embed=False,
         title=None, height=s.meta['height']*.85) + LM_bib,
            notes="""
