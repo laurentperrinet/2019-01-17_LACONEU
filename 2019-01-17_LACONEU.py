@@ -159,7 +159,7 @@ From the head on, I wish to thanks people who collaborated  and in particular ..
 """)
 
 
-review_bib = s.content_bib("LP", "2015", '"Sparse models" in <a href="http://invibe.net/LaurentPerrinet/Publications/Perrinet15bicv">Biologically Inspired Computer Vision</a>')
+review_bib = s.content_bib("LP", "2015", '"Sparse models" in <a href="https://laurentperrinet.github.io/publication/cristobal-perrinet-keil-15-bicv/">Biologically Inspired Computer Vision</a>')
 
 s.add_slide(content="""
     <video controls loop width=60%/>
@@ -291,7 +291,7 @@ notes="""
 
 """)
 
-freemove_bib = s.content_bib("LP, Adams and Friston", "2015", 'Biological Cybernetics, <a href="http://invibe.net/LaurentPerrinet/Publications/PerrinetAdamsFriston14">http://invibe.net/LaurentPerrinet/Publications/PerrinetAdamsFriston14</a>')
+freemove_bib = s.content_bib("LP, Adams and Friston", "2015", 'Biological Cybernetics, <a href="https://laurentperrinet.github.io/publication/perrinet-adams-friston-14/">https://laurentperrinet.github.io/publication/perrinet-adams-friston-14/</a>')
 for fname, note in zip(['friston_figure1.png', 'friston_figure2.png', 'PAF14equations.png', 'PAF14equations2.png'], ["""
 
 * This schematic shows the dependencies among various quantities modelling exchanges of an agent with the environment. It shows the states of the environment and the system in terms of a probabilistic dependency graph, where connections denote directed (causal) dependencies. The quantities are described within the nodes of this graph -- with exemplar forms for their dependencies on other variables.
@@ -421,7 +421,7 @@ let's move to the second part : at the cortical leval
 
 """)
 
-fle_bib = s.content_bib("Khoei, Masson and LP", "2017", 'PLoS CB', url="http://invibe.net/LaurentPerrinet/Publications/KhoeiMassonPerrinet17")
+fle_bib = s.content_bib("Khoei, Masson and LP", "2017", 'PLoS CB', url="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005068")
 
 s.add_slide(content="""
     <video controls autoplay loop width=99%/>
@@ -516,9 +516,8 @@ what are the consequences?
 
 """)
 
-# https://invibe.net/LaurentPerrinet/Publications/Chemla18
 # Chemla S, Reynaud A, di Volo M, Zerlaut Y, Perrinet L, Destexhe A, Chavane F. Suppressive waves disambiguate the representation of long-range apparent motion in awake monkey V1, URL . 2018 abstract.
-AM_bib = s.content_bib("Chemla, Reynaud, di Volo, Zerlaut, LP, Destexhe, Chavane", "2019", 'in revision', url=" https://invibe.net/LaurentPerrinet/Publications/Chemla18")
+AM_bib = s.content_bib("Chemla, Reynaud, di Volo, Zerlaut, LP, Destexhe, Chavane", "2019", 'in revision', url="https://laurentperrinet.github.io/publication/chemla-19/")
 for i in ['1', '3a']:
     s.add_slide(content=s.content_figures(
         [os.path.join(figpath_talk, 'Chemla18_'+ i + '.png')], bgcolor="white", embed=False,
